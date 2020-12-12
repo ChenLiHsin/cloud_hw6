@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+    <style>
+        .button {
+            border: none;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .button1 {
+            background-color: #4CAF50;
+            /* Green */
+        }
+
+        .button1:hover {
+            background-color: #358b37;
+        }
+
+        .button2 {
+            background-color: #008CBA;
+            /* Blue */
+        }
+
+        .button2:hover {
+            background-color: #1b6c86;
+            /* Blue */
+        }
+
+        .button3 {
+            background-color: coral;
+            /* Coral */
+        }
+
+        .button3:hover {
+            background-color: rgb(207, 85, 40);
+            /* Coral */
+        }
+
+        .button4 {
+            background-color: rgb(221, 2, 2);
+            border-radius: 2cm;
+        }
+
+        .button4:hover {
+            background-color: rgb(230, 134, 134);
+            border-radius: 2cm;
+        }
+
+        .mydiv {
+            width: 640px;
+            height: 150px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            display: block;
+            white-space: nowrap;
+        }
+
+        .mydiv1 {
+            border: 5px solid #4CAF50;
+        }
+
+        .mydiv2 {
+            border: 5px solid #008CBA;
+        }
+
+        .mydiv3 {
+            border: 5px solid coral;
+        }
+
+        .classBlock {
+            width: 80px;
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+            float: left;
+        }
+
+        .classABlock {
+            background-color: #64b166;
+        }
+
+        .classBBlock {
+            background-color: #3ba1c4;
+        }
+
+        .classCBlock {
+            background-color: rgb(253, 147, 108);
+        }
+
+        .canvas {
+            width: 160px;
+            height: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HW6. Advance NN exercise #4 ID:10627122</h1>
+    <div id="status"></div>
+
+    <div>
+        <h3 id="result">Predict Result</h3>
+    </div>
+    <div>
+        <button id="enableWebcamButton">Open the camera</button>
+        <button id="disableWebcamButton" disabled>Close the camera</button>
+    </div>
+    <div id="liveView">
+        <video id="webcam" autoplay width="320" height="240"></video>
+        <canvas id="outputCanvas"></canvas>
+    </div>
+    <section id="training">
+        <button class="button button1 disabled" id="class-a" disabled>Add A</button>
+        <button class="button button2 disabled" id="class-b" disabled>Add B</button>
+        <button class="button button3 disabled" id="class-c" disabled>Add C</button>
+        <button class="button button4 disabled" id="resetButton" disabled>Reset</button>
+    </section>
+    <section>
+        <div class="mydiv1" style="width: 720px;">
+            <div class="classBlock classABlock">Class A</div>
+            <div id="block1" class="mydiv"></div>
+        </div>
+        <br>
+        <div class="mydiv2" style="width: 720px;">
+            <div class="classBlock classBBlock">Class B</div>
+            <div id="block2" class="mydiv"></div>
+        </div>
+        <br>
+        <div class="mydiv3" style="width: 720px;">
+            <div class="classBlock classCBlock">Class C</div>
+            <div id="block3" class="mydiv"></div>
+        </div>
+    </section>
+
+    <!-- Load js after the content of the page -->
+    <!-- Load the latest version of TensorFlow.js -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+    <script src="transferLearning.js"></script>
+</body>
+
+</html>
